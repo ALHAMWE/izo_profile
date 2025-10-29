@@ -106,15 +106,15 @@ class HomePage extends StatelessWidget {
                 const SizedBox(height: 25),
 
                 // 4. الصورة/الفيديو الرئيسية
-                _buildMainImage(),
-                const SizedBox(height: 10),
+                // _buildMainImage(),
+                // const SizedBox(height: 10),
 
                 // 5. أزرار الروابط (Link-in-bio style)
-                const _LinkCard(
-                  label: 'WhatsApp',
-                  onPressed: _launchWhatsApp,
-                  showIcon: false,
-                ),
+                // const _LinkCard(
+                //   label: 'WhatsApp',
+                //   onPressed: _launchWhatsApp,
+                //   showIcon: false,
+                // ),
                 // _LinkCard(
                 //   label: 'Instagram',
                 //   onPressed: () => _launchUrl(instagramUrl),
