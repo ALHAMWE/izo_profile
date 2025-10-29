@@ -120,9 +120,6 @@ class HomePage extends StatelessWidget {
                 //   onPressed: () => _launchUrl(instagramUrl),
                 //   showIcon: false,
                 // ),
-
-
-
                 // _LinkCard(
                 //   label: 'Facebook',
                 //   onPressed: () => _launchUrl(facebookUrl),
