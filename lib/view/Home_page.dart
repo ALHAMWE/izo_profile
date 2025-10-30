@@ -19,13 +19,15 @@ const String contactUrl = 'https://izo.ae/contact';
 const String productsUrl = 'https://izo.ae/products';
 const String websiteUrl = 'https://izo.ae';
 const String whatsAppNumber = '+971501770199';
-const String locationUrl = 'https://www.google.com/maps/place/IZO+-+FUTURE+VISION+TR+LLC+-+%D8%B1%D8%A4%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84+%D8%B0+%D9%85+%D9%85%E2%80%AD/@25.3383315,55.4081303,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f590341cf20c7:0x17605e395f34a663!8m2!3d25.3383267!4d55.4055607!16s%2Fg%2F11y2p8wfd0?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D';
+const String locationUrl =
+    'https://www.google.com/maps/place/IZO+-+FUTURE+VISION+TR+LLC+-+%D8%B1%D8%A4%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%82%D8%A8%D9%84+%D8%B0+%D9%85+%D9%85%E2%80%AD/@25.3383315,55.4081303,17z/data=!3m1!4b1!4m6!3m5!1s0x3e5f590341cf20c7:0x17605e395f34a663!8m2!3d25.3383267!4d55.4055607!16s%2Fg%2F11y2p8wfd0?authuser=0&entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D';
 const String facebookUrl = 'https://www.facebook.com/izo.mena/';
 const String instagramUrl = 'https://www.instagram.com/izo.mena/';
-const String tiktokUrl = 'https://www.tiktok.com/@izo.mena?_t=ZS-8zWnYQT4lvM&_r=1';
+const String tiktokUrl =
+    'https://www.tiktok.com/@izo.mena?_t=ZS-8zWnYQT4lvM&_r=1';
 
 // دالة لفتح الروابط
-Future<void> _launchUrl(String url ) async {
+Future<void> _launchUrl(String url) async {
   final Uri uri = Uri.parse(url);
   if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
     print('Could not launch $url');
@@ -35,7 +37,7 @@ Future<void> _launchUrl(String url ) async {
 // دالة لفتح الواتساب
 Future<void> _launchWhatsApp() async {
   const String url = 'https://wa.me/$whatsAppNumber';
-  await _launchUrl(url );
+  await _launchUrl(url);
 }
 
 class HomePage extends StatelessWidget {
@@ -70,6 +72,11 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(40),
       decoration: BoxDecoration(
         color: Colors.white,
+        // image: DecorationImage(
+        //   image:
+        //   AssetImage('assets/images/background.jpg'), // مسار الصورة
+        //   fit: BoxFit.cover, // تغطي الصفحة بالكامل
+        // ),
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
           BoxShadow(
@@ -169,7 +176,7 @@ class HomePage extends StatelessWidget {
   Widget _buildRightColumn(BuildContext context) {
     return Column(
       children: [
-      //  _buildMainImage(),
+        //  _buildMainImage(),
         const SizedBox(height: 30),
         _buildLinkButtons(context),
       ],
@@ -242,17 +249,22 @@ class HomePage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        _buildIcon(FontAwesomeIcons.whatsapp, _launchWhatsApp, context, iconSize),
-        _buildIcon(FontAwesomeIcons.instagram, () => _launchUrl(instagramUrl), context, iconSize),
-        _buildIcon(FontAwesomeIcons.facebookF, () => _launchUrl(facebookUrl), context, iconSize),
-        _buildIcon(FontAwesomeIcons.tiktok, () => _launchUrl(tiktokUrl), context, iconSize),
+        _buildIcon(
+            FontAwesomeIcons.whatsapp, _launchWhatsApp, context, iconSize),
+        _buildIcon(FontAwesomeIcons.instagram, () => _launchUrl(instagramUrl),
+            context, iconSize),
+        _buildIcon(FontAwesomeIcons.facebookF, () => _launchUrl(facebookUrl),
+            context, iconSize),
+        _buildIcon(FontAwesomeIcons.tiktok, () => _launchUrl(tiktokUrl),
+            context, iconSize),
       ],
     );
   }
 
-  Widget _buildIcon(IconData icon, VoidCallback onPressed, BuildContext context, double size) {
+  Widget _buildIcon(IconData icon, VoidCallback onPressed, BuildContext context,
+      double size) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 6.0),
       child: IconButton(
         icon: FaIcon(icon, color: primaryColor, size: size),
         onPressed: onPressed,
