@@ -108,7 +108,19 @@ class HomePage extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 600),
       decoration: BoxDecoration(
         color: Colors.white,
+        // image: const DecorationImage(
+        //     image: AssetImage("assets/images/background.jpg")),
         borderRadius: BorderRadius.circular(30),
+        gradient: LinearGradient(colors: [
+          Colors.white.withOpacity(0.8),
+          Colors.white.withOpacity(0.1),
+          const Color(0x00ee6800).withOpacity(0.1),
+          const Color(0x00ee6800).withOpacity(0.2),
+          const Color(0x00ee6800).withOpacity(0.3),
+          const Color(0x00ee6800).withOpacity(0.4),
+          const Color(0x00ee6800).withOpacity(0.5),
+
+        ]),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
